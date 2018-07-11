@@ -21,13 +21,13 @@
         role: andrewrothstein.spark,
         spark_ver: '{{spark_version}}',
         spark_parent_dir: '{{ install_parent_dir }}'
-      }
+    }
 
 - name: set hadoop slaves
   template:
     src: templates/slaves.j2
     dest: '{{ hadoop_conf_dir }}'
-
+    
 - name: set spark slaves
   template:
     src: templates/slaves.j2
