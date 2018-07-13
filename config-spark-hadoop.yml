@@ -1,0 +1,14 @@
+- name: include vars:
+  include_vars:
+    file: vars/main.yml
+    name: mainvars
+
+- name: set hadoop slaves
+  template:
+    src=templates/slaves.j2
+    dest='{{ hadoop_conf_dir }}'
+
+- name: set spark slaves
+  template:
+    src=templates/slaves.j2
+    dest='{{ slaves_conf_dir }}'
